@@ -72,7 +72,9 @@ const createSlider = () => {
   imagesArea.style.display = 'none';
   const duration = document.getElementById('duration').value || 1000;
   if (duration < 0) {
-    alert('Duration should not be Negative.')
+    document.querySelector('.main').style.display = 'none';
+    imagesArea.style.display = 'block';
+    alert('Duration should not be Negative.');
   }
   else {
     sliders.forEach(slide => {
@@ -130,6 +132,7 @@ searchBtn.addEventListener('click', function () {
   const search = document.getElementById('search');
   searchArea()
 });
+
 const searchArea = () => {
   search.innerHTML = '';
   if (search.value === '') {
